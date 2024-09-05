@@ -144,7 +144,13 @@ This project is licensed under the MIT License. For usage or redistribution, ple
 
 ## Contributing
 
-Contributions are welcome! Please fork the repository and submit a pull request (PR) adhering to the project's coding standards and including appropriate tests. Open issues or PRs to discuss and review changes.
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch-name`).
+3. Make your changes and commit (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch-name`).
+5. Open a pull request.
 
 ## Contact
 
