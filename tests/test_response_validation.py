@@ -1,7 +1,9 @@
 # tests/test_response_validation.py
 
 import pytest
-from pages.basepage import ApiPage, log_info, log_error, BASE_URL
+from pages.basepage import ApiPage, log_info, log_error, BASE_URL, setup_logger
+
+logger = setup_logger('test_response_validation')
 
 @pytest.fixture
 def api_page():

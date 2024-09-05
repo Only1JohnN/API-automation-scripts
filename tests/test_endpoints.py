@@ -1,7 +1,9 @@
 # tests/test_endpoints.py
-
 import pytest
-from pages.basepage import ApiPage, log_info, log_error, BASE_URL
+from pages.basepage import ApiPage, log_info, log_error, BASE_URL, setup_logger
+
+# Use the logger set up for test_endpoints
+logger = setup_logger('test_endpoints')
 
 @pytest.fixture
 def api_page():
