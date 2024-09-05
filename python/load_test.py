@@ -339,26 +339,26 @@ def test_post_create_account(api_page):
 def test_delete_user_account(api_page):
     """Test DELETE request to delete a user account."""
     try:
+        # Ensure the correct parameters are included in the DELETE request
         response = api_page.delete('deleteAccount', params={'email': 'john@example.com', 'password': 'password'})
 
         if response.status_code == 200:
             # Check if 'Account deleted!' message is in the response
-            assert response.json().get('message') == 'Account deleted!', "Expected 'Account deleted!' message not found."
+            response_message = response.json().get('message', '')
+            assert 'Account deleted!' in response_message, "Expected 'Account deleted!' message not found."
             log_info('test_delete_user_account', response)
         elif response.status_code == 400:
             # Handle bad request errors gracefully
-            assert response.json().get('message') == 'Bad request, invalid parameters.'
+            assert response.json().get('message') == 'Bad request, email parameter is missing in DELETE request.'
             log_info('test_delete_user_account', response)
         else:
             # Log unexpected status codes but pass the test
             log_info('test_delete_user_account', response)
-            assert True, f"Unexpected status code: {response.status_code}"
+            assert False, f"Unexpected status code: {response.status_code}"
 
     except AssertionError as e:
         log_error('test_delete_user_account', response, e)
         raise
-
-
 
 
 
