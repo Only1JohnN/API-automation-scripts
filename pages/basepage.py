@@ -7,7 +7,7 @@ import os
 # Configuration
 BASE_URL = 'https://automationexercise.com/api'
 LOG_FOLDER = 'logs'  # Log folder path
-LOG_FILE = os.path.join(LOG_FOLDER, 'load_test.log')  # Full path to log file
+LOG_FILE = os.path.join(LOG_FOLDER, 'api_tests.log')  # Full path to log file
 
 # Ensure log folder exists
 os.makedirs(LOG_FOLDER, exist_ok=True)
