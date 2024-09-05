@@ -138,6 +138,33 @@ Here are some images illustrating the API functionalities:
 
 - **`requirements.txt`**: Lists Python dependencies required for test scripts.
 
+
+
+### API Endpoints
+These scripts validate different API endpoints:
+- `test_get_all_products`
+- `test_get_all_brands`
+- `test_post_to_search_product`
+- `test_delete_verify_login`
+- `test_post_create_account`
+- `test_get_user_detail_by_email`
+
+### Request Parameters
+These scripts handle different request parameters:
+- `test_post_to_search_product_without_param`
+- `test_post_verify_login_valid`
+- `test_post_verify_login_without_email`
+- `test_put_update_user_account`
+
+### Response Validation
+These scripts validate various API responses:
+- `test_post_to_all_products`
+- `test_put_to_all_brands`
+- `test_post_verify_login_invalid`
+- `test_delete_user_account`
+
+Each script handles various aspects of API testing such as checking the validity of endpoints, managing different request parameters, and validating the responses.
+
 ## License
 
 This project is licensed under the MIT License. For usage or redistribution, please contact me for permission.
