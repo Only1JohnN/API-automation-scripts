@@ -124,6 +124,39 @@ pytest python/stress_test.py
 - **JMeter Reports**: Analyze the `.jtl` results files or use JMeter’s reporting tools to generate detailed performance reports.
 - **Pytest Reports**: Review the output from `pytest` to assess the performance of your application under load and stress conditions.
 
+## API Images
+
+Here are some images illustrating the APIs:
+
+### Tab Bar
+
+![Tab Bar](images/Tab-bar_site-link.png)
+
+### API 1-3
+
+![API 1-3](images/API_1-3.png)
+
+### API 4-6
+
+![API 4-6](images/API_4-6.png)
+
+### API 7-9
+
+![API 7-9](images/API_7-9.png)
+
+### API 10-11
+
+![API 10-11](images/API_10-11.png)
+
+### API 12-13
+
+![API 12-13](images/API_12-13.png)
+
+### API 14
+
+![API 14](images/API_14.png)
+
+
 ## Directory Structure
 
 - **`jmeter/`**: Contains JMeter scripts and configurations for load and stress testing scenarios.
