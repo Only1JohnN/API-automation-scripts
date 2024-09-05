@@ -1,6 +1,6 @@
-# Load-Stress-Test-Automation
+# API-Automation-Scripts
 
-Welcome to the **Load-Stress-Test-Automation** repository! This project contains automated scripts for load and stress testing to assess and optimize application performance. The repository provides tools and configurations for simulating various load conditions and stress scenarios to ensure system robustness and reliability.
+Welcome to the **API-Automation-Scripts** repository! This project contains automated scripts for validating various API functionalities, including endpoint testing, handling request parameters, and response validation. The repository uses the Page Object Model (POM) for structured and maintainable test automation.
 
 ## Table of Contents
 
@@ -10,13 +10,10 @@ Welcome to the **Load-Stress-Test-Automation** repository! This project contains
   - [Clone the Repository](#clone-the-repository)
   - [Create a Python Virtual Environment](#create-a-python-virtual-environment)
   - [Install Python Dependencies](#install-python-dependencies)
-  - [Install JMeter](#install-jmeter)
   - [Configure Your Tests](#configure-your-tests)
-  - [Run Load Tests with JMeter](#run-load-tests-with-jmeter)
-  - [Run Stress Tests with JMeter](#run-stress-tests-with-jmeter)
-  - [Run Load Tests with Pytest](#run-load-tests-with-pytest)
-  - [Run Stress Tests with Pytest](#run-stress-tests-with-pytest)
+  - [Run API Tests](#run-api-tests)
   - [Review Reports](#review-reports)
+- [API Images](#api-images)
 - [Directory Structure](#directory-structure)
 - [License](#license)
 - [Contributing](#contributing)
@@ -24,17 +21,16 @@ Welcome to the **Load-Stress-Test-Automation** repository! This project contains
 
 ## Features
 
-- **Load Testing**: Simulate normal and peak load conditions using JMeter or Python `pytest` to evaluate application performance under typical usage.
-- **Stress Testing**: Assess system behavior under extreme conditions using JMeter or Python `pytest` to identify potential breaking points and performance degradation.
-- **Comprehensive Reporting**: Generate detailed reports with JMeter and `pytest` to analyze performance metrics and identify bottlenecks.
-- **Customizable Configurations**: Easily adjust testing parameters and scenarios to fit different applications and environments.
-- **Integration with Pytest**: Utilize `pytest` for running additional custom tests and generating reports.
+- **Endpoint Testing**: Validate various API endpoints to ensure they are functioning correctly.
+- **Request Parameters Handling**: Test different request parameters to verify API robustness and flexibility.
+- **Response Validation**: Confirm that API responses are accurate and meet expected standards.
+- **Page Object Model (POM)**: Utilize POM to structure and maintain test automation scripts for better readability and scalability.
+- **Comprehensive Reporting**: Generate detailed reports to analyze API performance and identify issues.
+- **Customizable Configurations**: Easily adjust testing parameters and scenarios to match your API requirements.
 
 ## Requirements
 
-- **JMeter**: For creating and running load and stress tests.
-- **Python**: For custom scripts and integrations.
-- **Page Object Model (POM)**: Used for structuring test automation in a maintainable and scalable way.
+- **Python**: Required for running automated test scripts.
 - **pytest**: Framework for running Python tests and generating reports.
 - **Requests Library**: For making HTTP requests in Python tests.
 
@@ -43,19 +39,22 @@ Welcome to the **Load-Stress-Test-Automation** repository! This project contains
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/Only1JohnN/Load-Stress-Test-Automation.git
-cd Load-Stress-Test-Automation
+git clone https://github.com/Only1JohnN/API-automation-scripts.git
+cd API-automation-scripts
 ```
 
 ### Create a Python Virtual Environment
 
-To avoid conflicts between dependencies, it's recommended to use a virtual environment. You can create one using `venv`:
+To avoid conflicts between dependencies, it's recommended to use a virtual environment. Create one using `venv` with either `python` or `python3`:
 
 ```bash
+# Use either python or python3
 python -m venv venv
+# or
+python3 -m venv venv
 ```
 
-Activate the virtual environment:
+#### Activating the Virtual Environment:
 
 - **On Windows:**
 
@@ -77,56 +76,26 @@ Install the required Python packages listed in `requirements.txt`:
 pip install -r requirements.txt
 ```
 
-### Install JMeter
-
-Follow the instructions on the [Apache JMeter website](https://jmeter.apache.org/download_jmeter.cgi) to download and install JMeter.
-
 ### Configure Your Tests
 
-- **JMeter Tests**: Modify the JMeter configuration files and test scripts according to your application’s requirements. Update parameters such as URLs, endpoints, and test data as needed.
+- **Test Scripts**: Update test scripts in the `tests` folder to configure endpoints, request parameters, and expected responses. Modify `api_tests.py` as needed.
+- **Page Object Model (POM)**: Review and update the POM classes defined in the `pages` folder to reflect the API endpoints and actions relevant to your tests.
 
-- **Pytest Tests**: Write or configure your Python test scripts for load and stress testing. Update URLs and parameters in `load_test.py` and `stress_test.py` as needed.
+### Run API Tests
 
-### Run Load Tests with JMeter
-
-Execute load testing scripts using JMeter:
-
-```bash
-jmeter -n -t jmeter/load_test_script.jmx -l results/load_test_results.jtl
-```
-
-### Run Stress Tests with JMeter
-
-Execute stress testing scripts similarly:
+Execute Python tests using `pytest`:
 
 ```bash
-jmeter -n -t jmeter/stress_test_script.jmx -l results/stress_test_results.jtl
-```
-
-### Run Load Tests with Pytest
-
-Execute Python load tests using `pytest`:
-
-```bash
-pytest python/load_test.py
-```
-
-### Run Stress Tests with Pytest
-
-Execute Python stress tests using `pytest`:
-
-```bash
-pytest python/stress_test.py
+pytest tests/api_tests.py
 ```
 
 ### Review Reports
 
-- **JMeter Reports**: Analyze the `.jtl` results files or use JMeter’s reporting tools to generate detailed performance reports.
-- **Pytest Reports**: Review the output from `pytest` to assess the performance of your application under load and stress conditions.
+Review the test execution logs to assess API functionality and identify issues. Logs are saved in the logs folder, as logging is enabled for detailed analysis of test outcomes.
 
 ## API Images
 
-Here are some images illustrating the APIs:
+Here are some images illustrating the API functionalities:
 
 ### Tab Bar
 
@@ -156,34 +125,29 @@ Here are some images illustrating the APIs:
 
 ![API 14](images/API_14.png)
 
-
 ## Directory Structure
 
-- **`jmeter/`**: Contains JMeter scripts and configurations for load and stress testing scenarios.
-  - `load_test_script.jmx`: JMeter script for load testing.
-  - `stress_test_script.jmx`: JMeter script for stress testing.
+- **`pages/`**: Contains POM classes used for structuring API test automation.
+  - `page_objects.py`: Defines Page Object Model classes for API interactions.
 
-- **`python/`**: Contains Python scripts for load and stress testing.
-  - `load_test.py`: Python script for custom load testing using `pytest`.
-  - `stress_test.py`: Python script for custom stress testing using `pytest`.
+- **`tests/`**: Contains test scripts for API validation.
+  - `api_tests.py`: Python script for validating various API functionalities.
 
-- **`results/`**: Directory where JMeter test results are saved.
-  - `load_test_results.jtl`: Results file for load tests.
-  - `stress_test_results.jtl`: Results file for stress tests.
+- **`results/`**: Directory where test results are saved.
+  - `test_results.log`: Log file for test results.
 
-- **`requirements.txt`**: Lists Python dependencies required for custom scripts.
-- **`page_objects.py`**: Defines Page Object Model classes used in tests (if applicable).
+- **`requirements.txt`**: Lists Python dependencies required for test scripts.
 
 ## License
 
-This project is licensed under the MIT License. However, you must contact me before using or redistributing this software.
+This project is licensed under the MIT License. For usage or redistribution, please contact me for permission.
 
 ## Contributing
 
-Contributions are welcome! If you’d like to contribute, please fork the repository and submit a pull request (PR). Ensure that your contributions adhere to the project's coding standards and include appropriate tests. Open issues or PRs to discuss and review any changes.
+Contributions are welcome! Please fork the repository and submit a pull request (PR) adhering to the project's coding standards and including appropriate tests. Open issues or PRs to discuss and review changes.
 
 ## Contact
 
 For any questions, feedback, or collaboration inquiries, please reach out to Adeniyi John.
 
-Thank you for using **Load-Stress-Test-Automation**. We hope this tool helps you achieve optimal performance for your applications!
+Thank you for using **API-Automation-Scripts**. We hope these tools help you ensure the reliability and performance of your APIs!
