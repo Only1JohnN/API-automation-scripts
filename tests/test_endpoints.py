@@ -1,7 +1,7 @@
 # tests/test_endpoints.py
 
 import pytest
-from pages.api_endpoints import ApiPage, log_info, log_error, BASE_URL
+from pages.basepage import ApiPage, log_info, log_error, BASE_URL
 
 @pytest.fixture
 def api_page():
