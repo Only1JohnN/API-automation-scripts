@@ -14,3 +14,7 @@ __pycache__/
 # Logs
 logs/
 *.log
+
+
+#Images
+images/
