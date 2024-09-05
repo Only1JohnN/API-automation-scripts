@@ -1,10 +1,9 @@
 # tests/test_request_parameters.py
 
 import pytest
-from pages.basepage import ApiPage, log_info, log_error, BASE_URL, setup_logger
+from pages.basepage import ApiPage, log_info, log_error, BASE_URL
 
-# Set up the logger specifically for this test file
-logger = setup_logger('test_request_parameters')
+
 
 @pytest.fixture
 def api_page():
